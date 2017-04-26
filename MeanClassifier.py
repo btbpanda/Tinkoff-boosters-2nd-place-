@@ -35,6 +35,7 @@ class MeanClassifier():
         else:
             grid = self.grid
         df = df[[target] + by].copy()
+        df.index.name = '__id__'
         index = df.index
         df.reset_index(inplace = True)   
         df['_folds'] = cv.test_folds
